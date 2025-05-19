@@ -88,3 +88,38 @@ image.setAttribute('alt', 'Chien mignon');
 ```
 
 ---
+
+## 🔹 5. Ajouter / Supprimer des classes CSS
+
+```javascript
+titre.classList.add('important');
+titre.classList.remove('important');
+titre.classList.toggle('important'); // Ajoute si absente, retire si présente
+```
+
+---
+
+## 🔹 6. Créer et insérer des éléments
+
+```javascript
+const nouveauParagraphe = document.createElement('p');
+nouveauParagraphe.textContent = "Je suis nouveau !";
+
+document.body.appendChild(nouveauParagraphe); // Ajout à la fin
+```
+
+Autres méthodes :
+- `parentNode.insertBefore(newElement, referenceElement)`
+- `element.prepend()`
+- `element.append()`
+
+---
+
+## 🔹 7. Supprimer des éléments
+
+```javascript
+const aSupprimer = document.getElementById('a-supprimer');
+aSupprimer.remove();
+```
+
+---
