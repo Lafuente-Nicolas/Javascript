@@ -123,3 +123,36 @@ aSupprimer.remove();
 ```
 
 ---
+
+## 🔹 8. Gérer les événements (event listeners)
+
+### Méthode moderne :
+
+```javascript
+const bouton = document.querySelector('#mon-bouton');
+
+bouton.addEventListener('click', function () {
+  alert('Bouton cliqué !');
+});
+```
+
+### Autres événements utiles :
+
+| Événement      | Déclenchement                    |
+|----------------|----------------------------------|
+| `click`        | Clic sur un élément              |
+| `mouseover`    | Souris passe au-dessus           |
+| `mouseout`     | Souris quitte l’élément          |
+| `submit`       | Soumission d’un formulaire       |
+| `keydown`      | Touche pressée au clavier        |
+
+---
+
+## 🔹 9. Exemple complet
+
+### HTML
+
+```html
+<button id="changeTitre">Changer le titre</button>
+<h1 id="titre">Mon Titre</h1>
+```
