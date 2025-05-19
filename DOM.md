@@ -30,3 +30,30 @@ Arbre DOM :
 ```
 
 ---
+
+
+## 🔹 2. Accéder aux éléments du DOM
+
+### Méthodes principales :
+
+| Méthode                             | Description                                      |
+|-------------------------------------|--------------------------------------------------|
+| `document.getElementById()`         | Sélection par ID                                 |
+| `document.getElementsByClassName()` | Sélection par classe (HTMLCollection)           |
+| `document.getElementsByTagName()`   | Sélection par balise (HTMLCollection)           |
+| `document.querySelector()`          | Sélection avec un **sélecteur CSS**             |
+| `document.querySelectorAll()`       | Sélection multiple (NodeList)                   |
+
+### Exemples :
+
+```javascript
+const titre = document.getElementById('monTitre');
+const paragraphes = document.getElementsByTagName('p');
+const bouton = document.querySelector('.btn');
+```
+
+---
+
+## 🔹 3. Modifier le contenu et les styles
+
+### 🔸 Modifier le texte :
