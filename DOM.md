@@ -156,3 +156,33 @@ bouton.addEventListener('click', function () {
 <button id="changeTitre">Changer le titre</button>
 <h1 id="titre">Mon Titre</h1>
 ```
+
+### JS
+
+```javascript
+const bouton = document.getElementById('changeTitre');
+const titre = document.getElementById('titre');
+
+bouton.addEventListener('click', () => {
+  titre.textContent = 'Titre modifié avec JavaScript !';
+  titre.style.color = 'blue';
+});
+```
+
+---
+
+## 🔹 10. Bonnes pratiques
+
+✅ Manipuler le DOM **après le chargement de la page**  
+→ utiliser `DOMContentLoaded` :
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+  // Le DOM est prêt
+});
+```
+
+✅ Utiliser `querySelector`/`querySelectorAll` autant que possible  
+✅ Ne pas abuser des modifications directes dans des boucles (coût en performance)
+
+---
