@@ -57,3 +57,34 @@ const bouton = document.querySelector('.btn');
 ## 🔹 3. Modifier le contenu et les styles
 
 ### 🔸 Modifier le texte :
+
+
+```javascript
+titre.textContent = 'Nouveau Titre';
+titre.innerHTML = '<em>Titre en italique</em>';
+```
+
+### 🔸 Modifier les styles :
+
+```javascript
+titre.style.color = 'red';
+titre.style.fontSize = '2rem';
+```
+
+---
+
+## 🔹 4. Manipuler les attributs
+
+```html
+<img id="image" src="chat.png" alt="Chat mignon">
+```
+
+```javascript
+const image = document.getElementById('image');
+
+image.getAttribute('src'); // "chat.png"
+image.setAttribute('src', 'chien.png');
+image.setAttribute('alt', 'Chien mignon');
+```
+
+---
