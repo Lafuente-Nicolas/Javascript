@@ -186,3 +186,4 @@ document.addEventListener('DOMContentLoaded', () => {
 ✅ Ne pas abuser des modifications directes dans des boucles (coût en performance)
 
 ---
+
