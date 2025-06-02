@@ -45,3 +45,22 @@ Au lieu de recharger toute la page à chaque action, seule une **partie du conte
 
 ###  Exemple :
 Quand tu cliques sur "Accueil" ou "Contact" dans un site Angular, le navigateur **ne recharge pas la page**, mais affiche une nouvelle vue grâce au **Angular Router**.
+
+## `@Component` 
+
+Le décorateur `@Component` est une fonction spéciale d’Angular qui transforme une classe TypeScript en composant Angular.
+
+exemple : 
+
+imaginons on veut créer un header
+```
+ng generate component header
+```
+
+cela va créer 
+```
+src/app/header/header.component.ts
+src/app/header/header.component.html
+src/app/header/header.component.scss
+src/app/header/header.component.spec.ts
+```
