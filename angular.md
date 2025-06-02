@@ -64,3 +64,23 @@ src/app/header/header.component.html
 src/app/header/header.component.scss
 src/app/header/header.component.spec.ts
 ```
+
+## composant enfant dans app.component.html
+
+Le fichier footer.component.ts contient :
+```ts
+@Component({
+  selector: 'app-footer',  // ← c’est ça qu’on va utiliser
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss']
+})
+export class FooterComponent {}
+```
+```html
+<!-- app.component.html -->
+<app-header></app-header>      <!-- composant enfant 1 -->
+<main>
+  <p>Bienvenue dans mon application Angular !</p>
+</main>
+<app-footer></app-footer>      <!-- composant enfant 2 -->
+```
