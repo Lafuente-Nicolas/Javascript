@@ -324,3 +324,21 @@ export class AppComponent {
 - Quand `isLoggedIn = true` → affiche « Bienvenue, utilisateur ! »
 
 - Quand `isLoggedIn = false` → affiche « Accès refusé. Merci de vous connecter. »
+
+## Directives d’attribut
+
+### [ngStyle] : appliquer des styles dynamiques
+
+La directive `[ngStyle]` permet de **modifier les styles CSS d’un élément dynamiquement** à partir d’un objet TypeScript.
+
+---
+
+### 📌 Syntaxe :
+```html
+<p [ngStyle]="{ color: 'red', fontWeight: 'bold' }">Texte stylé</p>
+```
+Fonctionnement :
+
+- `[ngStyle]` attend un objet JavaScript contenant des paires propriété: valeur.
+
+- Les propriétés CSS sont écrites en camelCase (ex. : backgroundColor, fontSize).
