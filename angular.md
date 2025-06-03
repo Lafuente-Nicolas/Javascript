@@ -234,3 +234,48 @@ export class AppComponent {
 
 <p *ngIf="isVisible">Bonjour, je suis visible !</p>
 ```
+### *ngFor : afficher une liste d’éléments
+
+La directive **`*ngFor`** permet de **répéter un élément HTML** pour chaque item d’un tableau.
+
+---
+
+###  Syntaxe :
+```html
+<li *ngFor="let fruit of fruits">{{ fruit }}</li>
+```
+#### Fonctionnement :
+
+- Angular parcourt le tableau fruits.
+
+- À chaque tour, il crée un `<li>` avec la valeur de l’élément courant.
+
+- La variable fruit représente l’élément actuel de la boucle.
+
+### Exemple :
+
+#### TypeScript (app.component.ts)
+```ts
+export class AppComponent {
+  fruits = ['Pomme', 'Banane', 'Fraise'];
+}
+```
+
+#### HTML (app.component.html)
+```html
+<ul>
+  <li *ngFor="let fruit of fruits">{{ fruit }}</li>
+</ul>
+```
+
+#### Résultat :
+```
+Une liste avec :
+
+    Pomme
+
+    Banane
+
+    Fraise
+```
+
