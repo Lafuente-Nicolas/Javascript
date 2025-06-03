@@ -113,3 +113,25 @@ export class AppComponent {
 ```
 Bonjour Angular !
 ```
+### Property Binding : `[src]="imageUrl"`
+
+La **liaison de propriété** permet de **lier une propriété HTML à une variable TypeScript**.
+
+---
+
+####  Syntaxe :
+```html
+<img [src]="imageUrl">
+```
+### Exemple complet :
+
+#### TypeScript (app.component.ts)
+```ts
+export class AppComponent {
+  imageUrl = 'https://via.placeholder.com/150';
+}
+```
+#### HTML (app.component.html)
+```html
+<img [src]="imageUrl" alt="Image dynamique">
+```
