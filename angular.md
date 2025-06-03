@@ -199,3 +199,38 @@ export class AppComponent {
 <input [(ngModel)]="username" placeholder="Entrez votre nom">
 <p>Bonjour {{ username }} !</p>
 ```
+## Directives structurelles
+
+### `*ngIf` : afficher ou masquer un élément selon une condition
+
+La directive **`*ngIf`** permet d’**afficher un élément HTML seulement si une condition est vraie**.
+
+---
+
+### 📌 Syntaxe :
+```html
+<p *ngIf="isVisible">Ce texte est visible si isVisible vaut true.</p>
+```
+### Fonctionnement :
+
+- Si `isVisible` est true, l’élément est ajouté au DOM.
+
+- Si `isVisible` est false, l’élément n’est pas présent du tout dans la page (pas juste masqué avec du CSS).
+
+### Exemple :
+
+### TypeScript (app.component.ts)
+```ts
+export class AppComponent {
+  isVisible = true;
+}
+```
+
+#### HTML (app.component.html)
+```html
+<button (click)="isVisible = !isVisible">
+  Afficher / Masquer le message
+</button>
+
+<p *ngIf="isVisible">Bonjour, je suis visible !</p>
+```
