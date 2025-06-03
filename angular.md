@@ -279,3 +279,48 @@ Une liste avec :
     Fraise
 ```
 
+### *ngIf...else avec `<ng-template>`
+
+Avec `*ngIf`, tu peux afficher un **bloc alternatif** quand la condition est fausse, grâce à **`else`** et **`<ng-template>`**.
+
+---
+
+### 📌 Syntaxe :
+```html
+<p *ngIf="isLoggedIn; else notLogged">Bienvenue !</p>
+<ng-template #notLogged>
+  <p>Veuillez vous connecter.</p>
+</ng-template>
+```
+### Fonctionnement :
+
+- Si `isLoggedIn` vaut `true`, Angular affiche le premier `<p>`.
+- Sinon, il affiche le contenu du `<ng-template #notLogged>`.
+
+---
+
+###  Exemple complet :
+
+####  TypeScript (`app.component.ts`)
+```ts
+export class AppComponent {
+  isLoggedIn = false;
+}
+```
+#### HTML (app.component.html)
+```HTML
+<button (click)="isLoggedIn = !isLoggedIn">
+  Se connecter / Se déconnecter
+</button>
+
+<p *ngIf="isLoggedIn; else notLogged">Bienvenue, utilisateur !</p>
+
+<ng-template #notLogged>
+  <p>Accès refusé. Merci de vous connecter.</p>
+</ng-template>
+```
+#### Résultat :
+
+- Quand `isLoggedIn = true` → affiche « Bienvenue, utilisateur ! »
+
+- Quand `isLoggedIn = false` → affiche « Accès refusé. Merci de vous connecter. »
