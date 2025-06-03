@@ -167,3 +167,35 @@ export class AppComponent {
 <p>Compteur : {{ count }}</p>
 <button (click)="increment()">Incrémenter</button>
 ```
+###  Two-way Binding avec `[(ngModel)]`
+
+Le **two-way binding** permet de **lier une variable TypeScript à un champ du formulaire** (comme un champ texte), **dans les deux sens** :
+- Quand l’utilisateur saisit quelque chose, la variable est mise à jour.
+- Quand la variable change, la valeur affichée dans le champ est mise à jour aussi.
+
+---
+
+###  Syntaxe :
+```html
+<input [(ngModel)]="username">
+```
+#### Fonctionnement :
+
+- `[(ngModel)]` combine [property binding] `([value])` et (event binding) ((input)).
+
+- Il est très utile pour les formulaires dynamiques.
+
+### Exemple :
+
+#### TypeScript (app.component.ts)
+```ts
+export class AppComponent {
+  username = '';
+}
+```
+
+#### HTML (app.component.html)
+```html
+<input [(ngModel)]="username" placeholder="Entrez votre nom">
+<p>Bonjour {{ username }} !</p>
+```
