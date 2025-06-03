@@ -135,3 +135,35 @@ export class AppComponent {
 ```html
 <img [src]="imageUrl" alt="Image dynamique">
 ```
+###  Event Binding : `(click)="increment()"`
+
+L’**event binding** permet d’**écouter un événement DOM** (comme un clic) et d’exécuter une méthode TypeScript en réponse.
+
+---
+
+###  Syntaxe :
+```html
+<button (click)="increment()">Clique moi</button>
+```
+#### Fonctionnement :
+
+- Quand l’utilisateur clique sur le bouton, Angular appelle la fonction increment() du composant.
+
+### Exemple :
+
+#### TypeScript (app.component.ts)
+```ts
+export class AppComponent {
+  count = 0;
+
+  increment() {
+    this.count++;
+  }
+}
+```
+
+#### HTML (app.component.html)
+```html
+<p>Compteur : {{ count }}</p>
+<button (click)="increment()">Incrémenter</button>
+```
