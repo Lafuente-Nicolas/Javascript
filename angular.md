@@ -84,3 +84,32 @@ export class FooterComponent {}
 </main>
 <app-footer></app-footer>      <!-- composant enfant 2 -->
 ```
+
+## Lier HTML et TypeScript
+
+### l’interpolation {{ message }} 
+
+L’interpolation te permet d’afficher des données TypeScript dans ton HTML.
+
+- En gros : tu écris une variable dans ton .ts, et tu l’utilises dans ton .html avec {{ ... }}.
+
+#### Fonctionnement :
+
+- Angular remplace {{ message }} dans le HTML par la valeur de la propriété message définie dans le fichier .ts du composant.
+
+###  Exemple :
+
+#### TypeScript (`app.component.ts`)
+```ts
+export class AppComponent {
+  message = 'Bonjour Angular !';
+}
+```
+#### HTML (app.component.html)
+```html
+<h1>{{ message }}</h1>
+```
+#### Résultat affiché dans le navigateur :
+```
+Bonjour Angular !
+```
