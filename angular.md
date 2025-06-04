@@ -446,3 +446,17 @@ user = { nom: 'Nicolas', age: 19 };
   "age": 19
 }
 ```
+---
+
+### Récapitulatif
+
+| Pipe      | Utilité                       | Exemple                             |
+|-----------|-------------------------------|-------------------------------------|
+| `uppercase` | Majuscules                  | `{{ 'bonjour' | uppercase }}`       |
+| `date`     | Formatage de date            | `{{ today | date:'fullDate' }}`     |
+| `currency` | Affichage de devise          | `{{ 50 | currency:'EUR' }}`         |
+| `json`     | Affichage d'objet/array      | `{{ user | json }}`                 |
+
+---
+
+Astuce : Les pipes sont **non-destructifs** – ils ne modifient pas la donnée dans le TypeScript, uniquement dans l’affichage.
