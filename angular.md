@@ -460,3 +460,16 @@ user = { nom: 'Nicolas', age: 19 };
 ---
 
 Astuce : Les pipes sont **non-destructifs** – ils ne modifient pas la donnée dans le TypeScript, uniquement dans l’affichage.
+
+### Enchaîner plusieurs pipes
+
+#### Exemple :
+
+Supposons que tu as une date et que tu veux :
+
+- Formater la date (date)
+
+- Transformer le résultat en majuscules (uppercase)
+```html
+<p>Date formatée en majuscules : {{ dateDuJour | date:'fullDate' | uppercase }}</p>
+```
