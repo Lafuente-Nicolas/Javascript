@@ -473,3 +473,19 @@ Supposons que tu as une date et que tu veux :
 ```html
 <p>Date formatée en majuscules : {{ dateDuJour | date:'fullDate' | uppercase }}</p>
 ```
+## Formulaires avec FormsModule
+
+### Importer FormsModule avec `[(ngModel)]`
+- Le module FormsModule contient les directives pour gérer le binding avec les formulaires template-driven (ex. : `[(ngModel)]`).
+
+- Sans importer FormsModule, Angular ne reconnaîtra pas la directive ngModel et tu auras une erreur.
+
+```ts
+import { FormsModule } from '@angular/forms';
+```
+
+### `(ngSubmit)`
+
+  - `(ngSubmit)` est un événement Angular qui se déclenche lorsque l’utilisateur soumet un formulaire HTML (avec un bouton de type submit).
+
+  - Il te permet de capturer l’action d’envoi du formulaire pour exécuter une fonction dans ton composant (ex : valider, envoyer des données, etc.).
