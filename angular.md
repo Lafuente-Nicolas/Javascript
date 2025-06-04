@@ -367,3 +367,44 @@ La directive `[ngClass]` permet de **gérer dynamiquement les classes CSS** à a
 - Un tableau (plusieurs classes)
 
 - Un objet avec conditions ({ classe: condition })
+
+## Pipes
+
+Les **pipes Angular** permettent de transformer les données à afficher dans le template HTML. Voici les plus couramment utilisés : `uppercase`, `date`, `currency`, et `json`.
+
+---
+
+### Pipe `uppercase`
+
+Transforme une chaîne de caractères en **majuscules**.
+
+```html
+<p>{{ 'bonjour' | uppercase }}</p>
+```
+
+➡️ **Résultat** : `BONJOUR`
+
+---
+
+### Pipe `date`
+
+Permet de formater une date.
+
+```html
+<p>{{ today | date }}</p>
+<!-- Affiche : 4 juin 2025 -->
+
+<p>{{ today | date:'fullDate' }}</p>
+<!-- Affiche : mercredi 4 juin 2025 -->
+
+<p>{{ today | date:'shortTime' }}</p>
+<!-- Affiche : 14:35 -->
+```
+
+Dans le fichier TypeScript :
+
+```ts
+today = new Date();
+```
+
+---
