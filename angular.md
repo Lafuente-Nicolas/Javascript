@@ -590,3 +590,34 @@ export class AppComponent {}
 - Quand tu vas sur /contact, tu vois la page Contact.
 
 - Quand tu vas sur /about, tu vois la page À propos.
+
+### Ajouter `<router-outlet>` dans app.component.html
+
+Qu’est-ce que `<router-outlet>` ?
+
+- C’est une balise Angular spéciale qui sert de point d’ancrage pour afficher les composants correspondant aux routes.
+
+- Quand tu navigues vers une URL, Angular charge le composant associé dans cette balise.
+
+#### Comment l’ajouter ?
+
+Dans ton fichier `app.component.html`, il suffit d’insérer :
+```html
+<nav>
+  <a routerLink="">Accueil</a> |
+  <a routerLink="contact">Contact</a> |
+  <a routerLink="about">À propos</a>
+</nav>
+
+<router-outlet></router-outlet>
+```
+
+- Ici, le menu avec les liens utilise routerLink pour naviguer.
+
+- Le contenu affiché changera dans la zone `<router-outlet>` selon la route active.
+
+#### Résumé
+
+- Sans `<router-outlet>`, Angular ne saura pas où afficher les pages liées au routing.
+
+- C’est obligatoire pour que le système de navigation fonctionne.
