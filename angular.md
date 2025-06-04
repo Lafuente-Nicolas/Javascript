@@ -408,3 +408,41 @@ today = new Date();
 ```
 
 ---
+
+### Pipe `currency`
+
+Affiche une **valeur monétaire** avec le symbole approprié.
+
+```html
+<p>{{ 99.99 | currency }}</p>
+<!-- Affiche : €99.99 -->
+
+<p>{{ 99.99 | currency:'USD' }}</p>
+<!-- Affiche : $99.99 -->
+
+<p>{{ 99.99 | currency:'EUR':'symbol':'4.2-2' }}</p>
+<!-- Affiche : €99.99 -->
+```
+
+---
+
+### Pipe `json`
+
+Affiche un **objet JavaScript** ou un tableau au format JSON.
+
+```html
+<pre>{{ user | json }}</pre>
+```
+
+Dans le fichier TypeScript :
+
+```ts
+user = { nom: 'Nicolas', age: 19 };
+```
+ **Résultat** :
+```json
+{
+  "nom": "Nicolas",
+  "age": 19
+}
+```
