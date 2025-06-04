@@ -621,3 +621,59 @@ Dans ton fichier `app.component.html`, il suffit d’insérer :
 - Sans `<router-outlet>`, Angular ne saura pas où afficher les pages liées au routing.
 
 - C’est obligatoire pour que le système de navigation fonctionne.
+
+### Ajouter une route avec paramètre `(:id)`
+ 
+- Une route avec paramètre permet d’afficher une page différente selon l’id dans l’URL.
+
+Par exemple :
+
+    /produit/1 → montre le produit numéro 1
+
+    /produit/2 → montre le produit numéro 2
+
+### 1. Crée une route avec paramètre
+
+Dans app-routing.ts :
+```ts
+import { Routes } from '@angular/router';
+import { DetailComponent } from './detail/detail.component';
+
+export const appRoutes: Routes = [
+  { path: 'produit/:id', component: DetailComponent }
+];
+```
+### 2. Dans DetailComponent, tu récupères le paramètre id
+```ts
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-detail',
+  standalone: true,
+  template: `
+    <h2>Détail du produit</h2>
+    <p>Produit numéro : {{ id }}</p>
+  `
+})
+export class DetailComponent {
+  id = '';
+
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
+  }
+}
+```
+### 3. Dans le menu de navigation (ex. app.component.ts)
+```html
+<a routerLink="/produit/1">Produit 1</a>
+<a routerLink="/produit/2">Produit 2</a>
+<router-outlet></router-outlet>
+```
+#### Résultat
+
+- Tu cliques sur "Produit 1" → URL devient /produit/1 → Affiche Produit numéro : 1
+
+- Tu cliques sur "Produit 2" → URL devient /produit/2 → Affiche Produit numéro : 2
