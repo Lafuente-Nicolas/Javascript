@@ -534,3 +534,59 @@ Avec `*ngIf`, on affiche les messages d’erreur uniquement quand un champ est i
   <button type="submit" [disabled]="monForm.invalid">Envoyer</button>
 </form>
 ```
+## Configuration du Routing dans Angular v20
+
+---
+
+### 1. Créer 3 composants (avec Angular CLI)
+
+```bash
+ng generate component home  
+ng generate component contact   
+ng generate component about
+```
+### 2. Créer le fichier app-routing.ts
+```ts
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
+
+export const appRoutes: Routes = [
+  { path: '', component: HomeComponent },           // Page d'accueil, URL "/"
+  { path: 'contact', component: ContactComponent }, // Page Contact, URL "/contact"
+  { path: 'about', component: AboutComponent },     // Page À propos, URL "/about"
+];
+```
+### 3. Modifier app.ts pour utiliser le routing
+```ts
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app-routing';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterModule.forRoot(appRoutes)],
+  template: `
+    <nav>
+      <a routerLink="">Accueil</a> |
+      <a routerLink="contact">Contact</a> |
+      <a routerLink="about">À propos</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
+})
+export class AppComponent {}
+```
+- `<router-outlet>` est un emplacement où Angular affichera la page correspondant à l’URL.
+
+- Les liens routerLink permettent de naviguer entre les pages sans recharger.
+
+#### Résultat attendu
+
+- Quand tu vas sur /, tu vois la page Accueil.
+
+- Quand tu vas sur /contact, tu vois la page Contact.
+
+- Quand tu vas sur /about, tu vois la page À propos.
