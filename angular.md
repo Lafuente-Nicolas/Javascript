@@ -342,3 +342,28 @@ Fonctionnement :
 - `[ngStyle]` attend un objet JavaScript contenant des paires propriété: valeur.
 
 - Les propriétés CSS sont écrites en camelCase (ex. : backgroundColor, fontSize).
+
+##  [ngClass] : appliquer des classes CSS dynamiques
+
+La directive `[ngClass]` permet de **gérer dynamiquement les classes CSS** à appliquer à un élément, selon des conditions définies dans le composant.
+
+---
+
+###  Syntaxes possibles :
+```html
+<!-- Ajouter une ou plusieurs classes -->
+<p [ngClass]="'ma-classe'"></p>
+<p [ngClass]="['classe1', 'classe2']"></p>
+
+<!-- Appliquer une classe selon une condition -->
+<p [ngClass]="{ 'erreur': isError, 'valide': !isError }"></p>
+```
+#### Fonctionnement :
+
+`[ngClass]` accepte :
+
+- Une chaîne (1 seule classe)
+
+- Un tableau (plusieurs classes)
+
+- Un objet avec conditions ({ classe: condition })
