@@ -489,3 +489,48 @@ import { FormsModule } from '@angular/forms';
   - `(ngSubmit)` est un événement Angular qui se déclenche lorsque l’utilisateur soumet un formulaire HTML (avec un bouton de type submit).
 
   - Il te permet de capturer l’action d’envoi du formulaire pour exécuter une fonction dans ton composant (ex : valider, envoyer des données, etc.).
+
+### Ajouter des validations de base (required, minlength, etc.)
+
+- `required` → champ obligatoire
+
+- `minlength="3"` → minimum 3 caractères
+
+- `#nomInput="ngModel"` → référence locale au contrôle du champ pour vérifier son état
+
+- `nomInput.invalid && nomInput.touched` → afficher les erreurs uniquement si le champ est invalide et a été touché
+
+- Le bouton est désactivé tant que le formulaire est invalide (`[disabled]="monForm.invalid"`)
+
+### Afficher les erreurs de validation avec *ngIf
+
+#### exemple :
+
+Avec `*ngIf`, on affiche les messages d’erreur uniquement quand un champ est invalide et que l’utilisateur a déjà interagi avec lui, pour guider sans gêner l’expérience utilisateur.
+
+```ts
+<form #monForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  <label for="prenom">Prénom :</label>
+  <input
+    id="prenom"
+    name="prenom"
+    type="text"
+    [(ngModel)]="prenom"
+    required
+    minlength="4"
+    #prenomInput="ngModel"
+  />
+
+  <!-- Affichage des erreurs avec *ngIf -->
+  <div *ngIf="prenomInput.invalid && prenomInput.touched" style="color: red;">
+    <div *ngIf="prenomInput.errors?.['required']">
+      Le prénom est obligatoire.
+    </div>
+    <div *ngIf="prenomInput.errors?.['minlength']">
+      Le prénom doit contenir au moins 4 caractères.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="monForm.invalid">Envoyer</button>
+</form>
+```
